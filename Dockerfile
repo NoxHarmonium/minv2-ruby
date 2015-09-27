@@ -2,7 +2,7 @@ FROM shippable/minv2
 
 MAINTAINER Sean Dawson <contact@seandawson.info>
 
-WORKDIR ~/
+WORKDIR /home/shippable/
 
 RUN "mkdir -p shippable/testresults"
 RUN "sudo apt-get update"
@@ -11,4 +11,3 @@ RUN "curl -sSL https://get.rvm.io | bash -s stable --ruby"
 RUN "source /home/shippable/.rvm/scripts/rvm"
 RUN "rvm use ruby --default"
 RUN "sudo gem install bundler"
-RUN "bundle install --local --path vendor/bundle"
